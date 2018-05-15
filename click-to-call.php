@@ -489,8 +489,13 @@ function click_to_call_code() {
 			
 
 		;*/
-
-		echo '<div id="click_to_call_bar" class="ctc_bar" style="direction: ' .$clickToCallDirection = __('ltr', 'click-to-call'). '; background-color:' . $options['click_to_call_bg'] . '; '. $options['click_to_call_customcss'] .'">';
+		if(isset($options['click_to_call_bg'])){
+			echo '<div id="click_to_call_bar" class="ctc_bar" style="direction: ' .$clickToCallDirection = __('ltr', 'click-to-call'). '; background-color:' .$options['click_to_call_bg'] . '; '. $options['click_to_call_customcss'] .'">';	
+		}
+		else{
+			echo '<div id="click_to_call_bar" class="ctc_bar" style="direction: ' .$clickToCallDirection = __('ltr', 'click-to-call'). '; background-color: #000000;'. $options['click_to_call_customcss'] .'">';
+		}
+		
 
 			if ($options['click_to_call_enable'] == '1') {
 
