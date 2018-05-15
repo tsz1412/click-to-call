@@ -25,7 +25,7 @@ Domain Path /languages/
 */
 
 //Updater
-require_once(plugin_dir_path( __FILE__ ) . 'update.php');
+include_once(plugin_dir_path( __FILE__ ) . 'update.php');
 $updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
 $updater->set_username( 'tsz1412' ); // set username
 $updater->set_repository( 'click-to-call' ); // set Repo name
