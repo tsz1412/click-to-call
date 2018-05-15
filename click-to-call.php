@@ -25,14 +25,32 @@ Domain Path /languages/
 */
 
 //Updater
+/*
 include_once(plugin_dir_path( __FILE__ ) . 'update.php');
 $updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
 $updater->set_username( 'tsz1412' ); // set username
 $updater->set_repository( 'click-to-call' ); // set Repo name
 $updater->initialize(); // initialize the updater
-
+*/
 
 // Add Admin Stuff
+include_once(plugin_dir_path( __FILE__ ) . 'updater.php');
+if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
+		$ClickToCallConfig = array(
+			'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
+			'proper_folder_name' => 'click-to-call', // this is the name of the folder your plugin lives in
+			'api_url' => 'https://github.com/tsz1412/click-to-call.git', // the GitHub API url of your GitHub repo
+			'raw_url' => 'https://github.com/tsz1412/click-to-call.git', // the GitHub raw url of your GitHub repo
+			'github_url' => 'https://github.com/username/repository-name', // the GitHub url of your GitHub repo
+			'zip_url' => 'https://github.com/username/repository-name/zipball/master', // the zip url of the GitHub repo
+			'sslverify' => true, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
+			'requires' => '3.0', // which version of WordPress does your plugin require?
+			'tested' => '3.3', // which version of WordPress is your plugin tested up to?
+			'readme' => 'README.md', // which file to use as the readme for the version number
+			'access_token' => '58e743f3e3ea18479a3a039a6b5c9a1e09bf91d7', // Access private repositories by authorizing under Appearance > GitHub Updates when this example plugin is installed
+		);
+		new WP_GitHub_Updater($ClickToCallConfig);
+	}
 
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
 
