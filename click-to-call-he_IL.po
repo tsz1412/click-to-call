@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Click to Call\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-14 23:48+0300\n"
+"PO-Revision-Date: 2018-05-15 00:47+0300\n"
+"Last-Translator: צביאל זאיקמן <tsz1412@gmail.com>\n"
+"Language-Team: עִבְרִית\n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: click-to-call.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: click-to-call.php:63
+msgid ""
+"A simple plugin that adds click to call functionality to your WordPress site "
+"on mobile devices."
+msgstr "כפתור חייג וכפתור צור קשר בסליידר מקובע בתחתית העמוד בתצוגת מובייל"
+
+#: click-to-call.php:70
+msgid "Enable Click to Call"
+msgstr "אפשר לחיצה לחיוג"
+
+#: click-to-call.php:78
+msgid "Enable Click to Contact"
+msgstr "אפשר לחיצה ליצירת קשר"
+
+#: click-to-call.php:87
+msgid "Your Click to Call Message"
+msgstr "שם כפתור החיוג"
+
+#: click-to-call.php:96
+msgid "Your Click to Contact Message"
+msgstr "שם כפתור הצור קשר"
+
+#: click-to-call.php:104
+msgid "Your Click to Contact link"
+msgstr "הכתובת אליה לחיצה על צור קשר מובילה"
+
+#: click-to-call.php:112
+msgid "Your Click to Call Number"
+msgstr "מספר העסק אליו כפתור החיוג מתקשר"
+
+#: click-to-call.php:120
+msgid "Click to Call Text Color"
+msgstr "צבע הפונט של כפתור חיוג"
+
+#: click-to-call.php:128
+msgid "Click to Call Background Color"
+msgstr "צבע הרקע של הסליידר"
+
+#: click-to-call.php:135
+msgid "Click to Call custom css"
+msgstr "תוספות CSS (זמני)"
+
+#: click-to-call.php:233
+msgid ""
+"Enter your information in the fields below. If you don't enter anything into "
+"the message area a phone icon will still show. Google Analytics event "
+"tracking is added and will show under the events section as 'Phone'. The "
+"plugin will only show on devices with a screen width under 736px. "
+msgstr ""
+
+#: click-to-call.php:246
+msgid "ltr"
+msgstr "rtl"
+
+#. Plugin Name of the plugin/theme
+msgid "Click to Call"
+msgstr "סליידר יצירת קשר וחיוג"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://tsz-dev.com"
+msgstr "http://tsz-dev.com"
+
+#. Description of the plugin/theme
+msgid ""
+"Add a simple click to call bar to the bottom of your page on mobile devices."
+msgstr "כפתור חייג וכפתור צור קשר בסליידר מקובע בתחתית העמוד בתצוגת מובייל."
+
+#. Author of the plugin/theme
+msgid "Tsviel Zaikman"
+msgstr "צביאל זאיקמן"
