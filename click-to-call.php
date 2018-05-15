@@ -29,7 +29,6 @@ require_once(plugin_dir_path( __FILE__ ) . 'update.php');
 $updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
 $updater->set_username( 'tsz1412' ); // set username
 $updater->set_repository( 'click-to-call' ); // set Repo name
-$updater->authorize($options['click_to_call_token']);
 $updater->initialize(); // initialize the updater
 
 
@@ -557,10 +556,16 @@ function click_to_call_code() {
 
 }
 
+//update-token
 
+$gitToken = null;
 
+if(isset($options['click_to_call_token'])){
+	$gitToken = $options['click_to_call_token'];
+}
+
+$updater->authorize($gitToken);
 // Display Admin Form
-
 
 
 function click_to_call_options_page() {
