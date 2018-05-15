@@ -34,15 +34,14 @@ $updater->initialize(); // initialize the updater
 */
 
 // Add Admin Stuff
-include_once(plugin_dir_path( __FILE__ ) . 'updater.php');
 add_action( 'init', 'github_ClickToCall_updater_init' );
 function github_ClickToCall_updater_init() {
-	include_once 'updater.php';
+	include_once(plugin_dir_path( __FILE__ ) . 'updater.php');
 	define( 'WP_GITHUB_FORCE_UPDATE', true );
 	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
 		$config = array(
 			'slug' => plugin_basename( __FILE__ ),
-			'proper_folder_name' => 'github-updater',
+			'proper_folder_name' => 'click-to-call',
 			'api_url' => 'https://github.com/tsz1412/click-to-call.git',
 			'raw_url' => 'https://github.com/tsz1412/click-to-call.git',
 			'github_url' => 'https://github.com/tsz1412/click-to-call.git',
