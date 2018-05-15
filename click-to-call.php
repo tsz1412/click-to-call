@@ -430,7 +430,7 @@ function click_to_call_token_render() {
 
     ?>
 
-    <input type='text' name='click_to_call_settings[click_to_call_token]' value='<?php echo $options['click_to_call_token']; ?>'>
+    <input type='text' name='click_to_call_settings[click_to_call_token]' value='<?php if(isset($options['click_to_call_token'])){ echo $options['click_to_call_token']; }?>'>
 
     <?php
 
