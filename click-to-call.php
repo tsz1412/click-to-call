@@ -6,7 +6,7 @@
 
 Plugin Name: Click to Call
 
-Plugin URI: https://github.com/tsz1412/click-to-contact.git
+Plugin URI: https://github.com/tsz1412/click-to-call.git
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
@@ -29,7 +29,7 @@ require_once(plugin_dir_path( __FILE__ ) . 'update.php');
 $updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
 $updater->set_username( 'tsz1412' ); // set username
 $updater->set_repository( 'click-to-call' ); // set Repo name
-$updater->authorize("2094e6a7dbbfa0a3a7abe29051a017bb4a446f3a");
+$updater->authorize($options['click_to_call_color']);
 $updater->initialize(); // initialize the updater
 
 
@@ -280,6 +280,20 @@ function click_to_call_settings_init() {
         'click_to_call_ctc_plugin_page_section'
 
     );
+	
+	add_settings_field(
+
+        'click_to_call_token',
+
+        __( 'Click to Call Token', 'click-to-call' ),
+
+        'click_to_call_token_render',
+
+        'ctc_plugin_page',
+
+        'click_to_call_ctc_plugin_page_section'
+
+    );
 
 }
 
@@ -408,6 +422,23 @@ function click_to_call_bg_render() {
 
 
 }
+
+function click_to_call_token_render() {
+
+
+
+    $options = get_option( 'click_to_call_settings' );
+
+    ?>
+
+    <input type='text' name='click_to_call_settings[click_to_call_token]' value='<?php echo $options['click_to_call_token']; ?>'>
+
+    <?php
+
+
+
+}
+
 
 
 
