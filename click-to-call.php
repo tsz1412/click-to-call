@@ -6,7 +6,7 @@
 
 Plugin Name: Click to Call
 
-Plugin URI: http://tsz-dev.com
+Plugin URI: https://github.com/tsz1412/click-to-contact.git
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
@@ -25,8 +25,7 @@ Domain Path /languages/
 */
 
 //Updater
-include_once( plugin_basename( __FILE__ ) . 'update.php');
-
+include_once( plugin_dir_path( __FILE__ ) . 'update.php');
 $updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
 $updater->set_username( 'tsz1412' ); // set username
 $updater->set_repository( 'click-to-contact' ); // set Repo name
