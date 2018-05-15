@@ -556,16 +556,14 @@ function click_to_call_code() {
 
 }
 
-//update-token
-/*
-$gitToken = null;
+//update token
+
 
 if(isset($options['click_to_call_token'])){
-	$gitToken = $options['click_to_call_token'];
+	$gitTokenNumber = $options['click_to_call_token'];
+	$updater->authorize($gitTokenNumber);
 }
 
-$updater->authorize($gitToken);
-*/
 // Display Admin Form
 
 
