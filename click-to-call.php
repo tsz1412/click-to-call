@@ -24,12 +24,17 @@ Domain Path /languages/
 
 */
 
+//Updater
+include_once( plugin_basename( __FILE__ ) . 'update.php');
+
+$updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
+$updater->set_username( 'tsz1412' ); // set username
+$updater->set_repository( 'click-to-contact' ); // set Repo name
+$updater->authorize("2094e6a7dbbfa0a3a7abe29051a017bb4a446f3a");
+$updater->initialize(); // initialize the updater
 
 
 // Add Admin Stuff
-
-
-
 
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
 
@@ -37,13 +42,6 @@ add_action( 'admin_init', 'click_to_call_settings_init' );
 
 add_action( 'admin_enqueue_scripts', 'ctc_add_color_picker' );
 
-include_once( plugin_dir_path( __FILE__ ) . 'update.php');
-
-$updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
-$updater->set_username( 'tsz1412' ); // set username
-$updater->set_repository( 'click-to-contact' ); // set Repo name
-$updater->authorize("2094e6a7dbbfa0a3a7abe29051a017bb4a446f3a");
-$updater->initialize(); // initialize the updater
 
 
 //Add Click To Call Bar to Footer
