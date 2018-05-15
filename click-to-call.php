@@ -10,7 +10,7 @@ Plugin URI: http://tsz-dev.com
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
-Version: 1.0.2
+Version: 1.0.3
 
 Author: Tsviel Zaikman
 
