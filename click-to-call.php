@@ -35,7 +35,27 @@ $updater->initialize(); // initialize the updater
 
 // Add Admin Stuff
 include_once(plugin_dir_path( __FILE__ ) . 'updater.php');
-include_once(plugin_dir_path( __FILE__ ) . 'admin/updates.php');
+add_action( 'init', 'github_ClickToCall_updater_init' );
+function github_ClickToCall_updater_init() {
+	include_once 'updater.php';
+	define( 'WP_GITHUB_FORCE_UPDATE', true );
+	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+		$config = array(
+			'slug' => plugin_basename( __FILE__ ),
+			'proper_folder_name' => 'github-updater',
+			'api_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'raw_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'github_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'zip_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'sslverify' => true,
+			'requires' => '3.0',
+			'tested' => '3.3',
+			'readme' => 'README.md',
+			'access_token' => 'c5513e206d443240a8fab736a22ad685e71f8f3f',
+		);
+		new WP_GitHub_Updater( $config );
+	}
+}
 
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
 
