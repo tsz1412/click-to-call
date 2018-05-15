@@ -29,7 +29,6 @@ require_once(plugin_dir_path( __FILE__ ) . 'update.php');
 $updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
 $updater->set_username( 'tsz1412' ); // set username
 $updater->set_repository( 'click-to-call' ); // set Repo name
-$updater->authorize("fbdc6139b2fa96a2ab10ae3df7b77700d6a2e73f");
 $updater->initialize(); // initialize the updater
 
 
