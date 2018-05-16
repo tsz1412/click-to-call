@@ -6,7 +6,7 @@ Plugin URI: https://github.com/tsz1412/click-to-call.git
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
-Version: 1.2
+Version: 1.2.1
 
 Author: Tsviel Zaikman
 
@@ -250,12 +250,12 @@ function click_to_call_code() {
 			echo '<div id="click_to_call_bar" class="ctc_bar" style="direction: ' .$clickToCallDirection = __('ltr', 'click-to-call'). '; background-color: #000000;'. $options['click_to_call_customcss'] .'">';
 		}
 			if ($options['click_to_call_enable'] == '1') {
-				echo "<a href='tel:" . $options['click_to_call_number'] ."' onclick='ga(\"send\",\"event\",\"Phone\",\"Click To Call\", \"Phone\")'; style='padding-right: 21px; padding-left: 21; color:" . $options['click_to_call_color'] . "' !important;>
+				echo "<a href='tel:" . $options['click_to_call_number'] ."' style='padding-right: 21px; padding-left:21px; color:" . $options['click_to_call_color'] . "'>
 				<i class='ctc-fa fa fa-phone'></i></span>" . $options['click_to_call_message'] . "</a>";
 			}
 
 			if ($options['click_to_contact_enable'] == '1') {
-				echo "<a href='" .$options['click_to_contact_link']. "' id='ctc_contact_toggle' style='color:" . $options['click_to_call_color'] . "' !important;> <i class='ctc-fa fa fa-plane'></i> " . $options['click_to_contact_message'] . "</a>";
+				echo "<a href='" .$options['click_to_contact_link']. "' id='ctc_contact_toggle' style='color:" . $options['click_to_call_color'] . "'><i class='ctc-fa fa fa-plane'></i> " . $options['click_to_contact_message'] . "</a>";
 			}
 	
 		echo '</div>';
