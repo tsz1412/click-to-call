@@ -1,9 +1,5 @@
 <?php
-
-
-
 /*
-
 Plugin Name: Click to Call
 
 Plugin URI: https://github.com/tsz1412/click-to-call.git
@@ -24,8 +20,7 @@ Domain Path /languages/
 
 */
 
-
-
+//Updater function license - START//
 /**
  * Note: the version # above is purposely low in order to be able to test the updater
  * The real version # is below
@@ -51,7 +46,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-
+//Updater function license - END//
 add_action( 'init', 'github_plugin_updater_test_init' );
 function github_plugin_updater_test_init() {
 
@@ -72,7 +67,7 @@ function github_plugin_updater_test_init() {
 			'requires' => '3.0',
 			'tested' => '3.3',
 			'readme' => 'readme.txt',
-			'access_token' => 'c5513e206d443240a8fab736a22ad685e71f8f3f',
+			'access_token' => '5e1fd2bc377873f658fe0a87e7210c886cf99ac6',
 		);
 
 		new WP_GitHub_Updater( $config );
@@ -81,257 +76,126 @@ function github_plugin_updater_test_init() {
 
 }
 // Add Admin Stuff
-
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
-
 add_action( 'admin_init', 'click_to_call_settings_init' );
-
 add_action( 'admin_enqueue_scripts', 'ctc_add_color_picker' );
 
-
-
 //Add Click To Call Bar to Footer
-
-
-
 add_action( 'wp_footer', 'click_to_call_code' );
 
 //Adds Translation to Click to call bar
-
 add_action('plugins_loaded', 'ctc_load_textdomain');
 
-
-
 //loads Translation
-
 function ctc_load_textdomain() {
-
 	load_plugin_textdomain( 'click-to-call', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
-
 }
-
-
-
-
 
 // Load Color Picker
-
-
-
 function ctc_add_color_picker( $hook ) {
-
-
-
     if( is_admin() ) {
-
-
-
         // Add Color Picker CSS
-
         wp_enqueue_style( 'wp-color-picker' );
-
-
-
         // Include Color Picker JS
-
         wp_enqueue_script( 'custom-script-handle', plugins_url( 'js/ctc.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-
     }
-
 }
-
 
 
 // Add to Menu > Tools
-
-
-
 function click_to_call_add_admin_menu() {
-
-
-
     add_submenu_page( 'options-general.php', 'Click to Call', __('Click to Call', 'click-to-call'), 'manage_options', 'click_to_call', 'click_to_call_options_page' );
-
-
-
 }
-
-
 
 // Adding Settings
-
-
-
 function click_to_call_settings_init() {
-
-
-
     register_setting( 'ctc_plugin_page', 'click_to_call_settings' );
-
 	$ctcPluginDescription = __( 'A simple plugin that adds click to call functionality to your WordPress site on mobile devices.', 'click-to-call' );
-
     add_settings_section(
-
         'click_to_call_ctc_plugin_page_section',
-
         $ctcPluginDescription,
-
         'click_to_call_settings_section_callback',
-
         'ctc_plugin_page'
-
     );
 
-	//call
-
+//call now enabler
     add_settings_field(
-
         'click_to_call_enable',
-
         __( 'Enable Click to Call', 'click-to-call' ),
-
         'click_to_call_enable_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
-	//contact
-
-	add_settings_field(
-
+//contact
+    add_settings_field(
         'click_to_contact_enable',
-
         __( 'Enable Click to Contact', 'click-to-call' ),
-
         'click_to_contact_enable_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
-
-
-	//call
-
+//call function fields
     add_settings_field(
-
         'click_to_call_message',
-
         __( 'Your Click to Call Message', 'click-to-call' ),
-
         'click_to_call_message_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
 	
-
-	//contact
-
-	add_settings_field(
-
+//contact us fields
+     add_settings_field(
         'click_to_contact_message',
-
         __( 'Your Click to Contact Message', 'click-to-call' ),
-
         'click_to_contact_message_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
-	
-
-	add_settings_field(
-
+     add_settings_field(
         'click_to_contact_link',
-
         __( 'Your Click to Contact link', 'click-to-call' ),
-
         'click_to_contact_link_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
-
-
     add_settings_field(
-
         'click_to_call_number',
-
         __( 'Your Click to Call Number', 'click-to-call' ),
-
         'click_to_call_number_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
-
-
     add_settings_field(
-
         'click_to_call_color',
-
         __( 'Click to Call Text Color', 'click-to-call' ),
-
         'click_to_call_color_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
-
-
 
     add_settings_field(
-
         'click_to_call_bg',
-
         __( 'Click to Call Background Color', 'click-to-call' ),
-
         'click_to_call_bg_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
-	add_settings_field(
-
+    add_settings_field(
         'click_to_call_customcss',
-
         __( 'Click to Call custom css', 'click-to-call' ),
-
         'click_to_call_customcss_render',
-
         'ctc_plugin_page',
-
         'click_to_call_ctc_plugin_page_section'
-
     );
 
 }
-
-
-
 // Render Admin Input
 
 
