@@ -58,9 +58,9 @@ function github_plugin_updater_test_init() {
 
 		$config = array(
 			'slug' => plugin_basename( __FILE__ ),
-			'proper_folder_name' => 'github-updater',
-			'api_url' => 'https://github.com/tsz1412/click-to-call.git',
-			'raw_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'proper_folder_name' => 'click-to-call',
+			'api_url' => 'https://api.github.com/tsz1412/click-to-call',
+			'raw_url' => 'https://github.com/tsz1412',
 			'github_url' => 'https://github.com/tsz1412/click-to-call.git',
 			'zip_url' => 'https://github.com/tsz1412/click-to-call/archive/master.zip',
 			'sslverify' => true,
