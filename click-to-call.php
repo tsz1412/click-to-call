@@ -62,7 +62,7 @@ function github_plugin_updater_test_init() {
 			'api_url' => 'https://github.com/tsz1412/click-to-call.git',
 			'raw_url' => 'https://github.com/tsz1412/click-to-call.git',
 			'github_url' => 'https://github.com/tsz1412/click-to-call.git',
-			'zip_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'zip_url' => 'https://github.com/tsz1412/click-to-call/archive/master.zip',
 			'sslverify' => true,
 			'requires' => '3.0',
 			'tested' => '3.3',
