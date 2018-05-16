@@ -20,8 +20,10 @@ Domain Path /languages/
 
 */
 
-add_action( 'init', 'github_plugin_updater_test_init' );
-function github_plugin_updater_test_init() {
+
+//* Updater init *//
+add_action( 'init', 'click_to_call_updater_init' );
+function click_to_call_updater_init() {
 	include_once 'updater.php';
 	define( 'WP_GITHUB_FORCE_UPDATE', true );
 	
@@ -45,6 +47,9 @@ function github_plugin_updater_test_init() {
 	}
 
 }
+//* Updater init *//
+
+
 // Add Admin Stuff
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
 add_action( 'admin_init', 'click_to_call_settings_init' );
@@ -276,4 +281,3 @@ function click_to_call_options_page() {
 }
 
 ?>
-
