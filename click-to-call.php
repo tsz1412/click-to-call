@@ -72,7 +72,7 @@ function github_plugin_updater_test_init() {
 			'requires' => '3.0',
 			'tested' => '3.3',
 			'readme' => 'readme.txt',
-			'access_token' => 'c5513e206d443240a8fab736a22ad685e71f8f3f',
+			'access_token' => '',
 		);
 
 		new WP_GitHub_Updater( $config );
