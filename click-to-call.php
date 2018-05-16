@@ -57,16 +57,24 @@ function github_plugin_updater_test_init() {
 	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
 
 		$config = array(
-			'slug' => plugin_basename( __FILE__ ),
-			'proper_folder_name' => 'click-to-call',
-			'api_url' => 'https://api.github.com/tsz1412/click-to-call',
-			'raw_url' => 'https://github.com/tsz1412',
-			'github_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'proper_folder_name' => 'click-to-contact',
+
+			'api_url' => 'https://api.github.com/users/tsz1412/click-to-call',
+
+			'raw_url' => 'https://api.github.com/repos/tsz1412/click-to-call/master',
+
+			'github_url' => 'https://github.com/tsz1412/click-to-call',
+
 			'zip_url' => 'https://github.com/tsz1412/click-to-call/archive/master.zip',
+
 			'sslverify' => true,
+
 			'requires' => '3.0',
+
 			'tested' => '3.3',
+
 			'readme' => 'readme.txt',
+			
 			'access_token' => '',
 		);
 
