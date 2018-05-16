@@ -24,37 +24,63 @@ Domain Path /languages/
 
 */
 
-//Updater
+
+
+/**
+ * Note: the version # above is purposely low in order to be able to test the updater
+ * The real version # is below
+ *
+ * @package GithubUpdater
+ * @author Joachim Kudish @link http://jkudish.com
+ * @since 1.3
+ * @version 1.5
+ */
+
 /*
-include_once(plugin_dir_path( __FILE__ ) . 'update.php');
-$updater = new ClickToCallUpdater( __FILE__ ); // instantiate our class
-$updater->set_username( 'tsz1412' ); // set username
-$updater->set_repository( 'click-to-call' ); // set Repo name
-$updater->initialize(); // initialize the updater
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-// Add Admin Stuff
-add_action( 'init', 'github_ClickToCall_updater_init' );
-function github_ClickToCall_updater_init() {
-	include_once(plugin_dir_path( __FILE__ ) . 'updater.php');
+add_action( 'init', 'github_plugin_updater_test_init' );
+function github_plugin_updater_test_init() {
+
+	include_once 'updater.php';
+
 	define( 'WP_GITHUB_FORCE_UPDATE', true );
+
 	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+
 		$config = array(
 			'slug' => plugin_basename( __FILE__ ),
-			'proper_folder_name' => 'click-to-call',
-			'api_url' => 'https://github.com/tsz1412/click-to-call.git',
-			'raw_url' => 'https://github.com/tsz1412/click-to-call.git',
-			'github_url' => 'https://github.com/tsz1412/click-to-call.git',
-			'zip_url' => 'https://github.com/tsz1412/click-to-call.git',
+			'proper_folder_name' => 'github-updater',
+			'api_url' => 'https://api.github.com/repos/tsz1412/click-to-call',
+			'raw_url' => 'https://raw.github.com/tsz1412/click-to-call/master',
+			'github_url' => 'https://github.com/tsz1412/click-to-call',
+			'zip_url' => 'https://github.com/tsz1412/click-to-call/archive/master.zip',
 			'sslverify' => true,
 			'requires' => '3.0',
 			'tested' => '3.3',
-			'readme' => 'README.md',
+			'readme' => 'readme.txt',
 			'access_token' => 'c5513e206d443240a8fab736a22ad685e71f8f3f',
 		);
+
 		new WP_GitHub_Updater( $config );
+
 	}
+
 }
+// Add Admin Stuff
 
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
 
