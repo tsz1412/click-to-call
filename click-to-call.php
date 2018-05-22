@@ -20,6 +20,10 @@ Domain Path /languages/
 
 */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 //* Updater init *//
 add_action( 'init', 'click_to_call_updater_init' );
