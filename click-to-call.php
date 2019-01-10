@@ -58,6 +58,8 @@ function click_to_call_updater_init() {
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
 add_action( 'admin_init', 'click_to_call_settings_init' );
 add_action( 'admin_enqueue_scripts', 'ctc_add_color_picker' );
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
 //Add Click To Call Bar to Footer
 add_action( 'wp_footer', 'click_to_call_code' );
 //Adds Translation to Click to call bar
@@ -81,15 +83,15 @@ function click_to_call_code() {
 		}
 			if ($options['click_to_call_enable'] == '1') {
 				echo "<a href='tel:" . $options['click_to_call_number'] ."' style='padding-right: 21px; padding-left:21px; color:" . $options['click_to_call_color'] . "'>
-				<i class='ctc-fa fa fa-phone'></i></span>" . $options['click_to_call_message'] . "</a>";
+				<i class='ctc-fa fa " . $options['click_to_call_icon'] . "'></i></span>" . $options['click_to_call_message'] . "</a>";
 			}
 
 			if ($options['click_to_contact_enable'] == '1') {
-				echo "<a href='" .$options['click_to_contact_link']. "' id='ctc_contact_toggle' style='color:" . $options['click_to_call_color'] . "'><i class='ctc-fa fa fa-plane'></i> " . $options['click_to_contact_message'] . "</a>";
+				echo "<a href='" .$options['click_to_contact_link']. "' id='ctc_contact_toggle' style='color:" . $options['click_to_call_color'] . "'><i class='ctc-fa fa " . $options['click_to_contact_icon'] . "'></i> " . $options['click_to_contact_message'] . "</a>";
 			}
 	
 		echo '</div>';
 		//Include style.css and fontawasome addon
 	    wp_enqueue_style('ctc-styles', plugin_dir_url( __FILE__ ) . 'css/ctc_style.css' );
-		wp_enqueue_style('ctc-styles', plugin_dir_url( __FILE__ ) . 'css/font-awesome.min.css' );
+		wp_enqueue_style('ctc-styles-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
 }

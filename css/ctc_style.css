@@ -1,1 +1,71 @@
-@charset "UTF-8";[class*=" ctc-icon-"]:before,[class^=ctc-icon-]:before,[data-icon]:before{font-family:ctc-icon-font!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@font-face{font-family:ctc-icon-font;src:url(../font/icon-font.eot);src:url(../font/icon-font.eot?#iefix) format("embedded-opentype"),url(../font/icon-font.woff) format("woff"),url(../font/icon-font.ttf) format("truetype"),url(../font/icon-font.svg#icon-font) format("svg");font-weight:400;font-style:normal}[data-icon]:before{content:attr(data-icon)}.ctc-icon-phone:before{content:"\61"}@media (max-width:736px){#click_to_call_bar,#click_to_call_bar a,#click_to_call_bar:focus,#click_to_call_bar:hover{text-decoration:none!important}body{padding-bottom:50px}#click_to_call_bar{position:fixed;bottom:0;width:100%;background-color:#222;text-align:center;display:block;z-index:10000;height:50px;font-size:18px;line-height:50px}#click_to_call_bar a{color:#fff;padding-left:5px;padding-right:5px}#click_to_call_bar span{font-size:18px;margin-right:5px;vertical-align:sub}}@media (min-width:737px){#click_to_call_bar{display:none}}
+@charset "UTF-8";
+[class*=" ctc-icon-"]:before,
+[class^=ctc-icon-]:before,
+[data-icon]:before {
+    font-family: ctc-icon-font!important;
+    font-style: normal!important;
+    font-weight: 400!important;
+    font-variant: normal!important;
+    text-transform: none!important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+@font-face {
+    font-family: ctc-icon-font;
+    src: url(../font/icon-font.eot);
+    src: url(../font/icon-font.eot?#iefix) format("embedded-opentype"), url(../font/icon-font.woff) format("woff"), url(../font/icon-font.ttf) format("truetype"), url(../font/icon-font.svg#icon-font) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+[data-icon]:before {
+    content: attr(data-icon)
+}
+
+.ctc-icon-phone:before {
+    content: "\61"
+}
+
+
+@media (max-width:736px) {
+    #click_to_call_bar,
+    #click_to_call_bar a,
+    #click_to_call_bar:focus,
+    #click_to_call_bar:hover {
+        text-decoration: none!important
+    }
+    body {
+        padding-bottom: 50px
+    }
+    #click_to_call_bar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #222;
+        text-align: center;
+        display: block;
+        z-index: 10000;
+        height: 50px;
+        font-size: 18px;
+        line-height: 50px
+    }
+    #click_to_call_bar a {
+        color: #fff;
+        padding-left: 5px;
+        padding-right: 5px
+    }
+    #click_to_call_bar span {
+        font-size: 18px;
+        margin-right: 5px;
+        vertical-align: sub
+    }
+}
+
+@media (min-width:737px) {
+    #click_to_call_bar {
+        display: none
+    }
+}
