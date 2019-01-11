@@ -6,7 +6,7 @@ Plugin URI: https://github.com/tsz1412/click-to-call.git
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
-Version: 1.6.1
+Version: 1.7
 
 Author: Tsviel Zaikman
 
@@ -30,36 +30,6 @@ require 'updater/plugin-update-checker.php';
 	__FILE__,
 	'click-to-call'
 );
-
-//* Updater init *//
-/*
-add_action( 'init', 'click_to_call_updater_init' );
-function click_to_call_updater_init() {
-	include_once 'updater.php';
-	define( 'WP_GITHUB_FORCE_UPDATE', true );
-	
-	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
-		$config = array(
-			'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
-			'proper_folder_name' => 'click-to-call', // this is the name of the folder your plugin lives in
-			'api_url' => 'https://api.github.com/repos/tsz1412/click-to-call', // the GitHub API url of your GitHub repo
-			'raw_url' => 'https://raw.github.com/tsz1412/click-to-call/master', // the GitHub raw url of your GitHub repo
-			'github_url' => 'https://github.com/tsz1412/click-to-call', // the GitHub url of your GitHub repo
-			'zip_url' => 'https://github.com/tsz1412/click-to-call/zipball/master', // the zip url of the GitHub repo
-			'sslverify' => true, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
-			'requires' => '3.0', // which version of WordPress does your plugin require?
-			'tested' => '3.3', // which version of WordPress is your plugin tested up to?
-			'readme' => 'readme.txt', // which file to use as the readme for the version number
-			'access_token' => '', // Access private repositories by authorizing under Appearance > GitHub Updates when this example plugin is installed
-		);
-
-		new WP_GitHub_Updater( $config );
-
-	}
-
-}*/
-//* Updater init *//
-
 
 // Add Admin Stuff
 add_action( 'admin_menu', 'click_to_call_add_admin_menu' );
