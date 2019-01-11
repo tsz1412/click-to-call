@@ -26,10 +26,10 @@ if ( ! defined( 'WPINC' ) ) {
 }
 require 'updater/plugin-update-checker.php';
 	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-		'updater/click-to-call-updater.json',
-		__FILE__, //Full path to the main plugin file or functions.php.
-		'click-to-call'
-	);
+	'https://github.com/tsz1412/click-to-call',
+	__FILE__,
+	'click-to-call'
+);
 
 //* Updater init *//
 /*
