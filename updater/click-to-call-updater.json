@@ -29,6 +29,22 @@
 		"high": "http://w-shadow.com/files/external-update-example/assets/banner-1544x500.png"
 	},
 
+	
+	"translations": [
+		{
+			"language": "he_IL",
+			"version": "4.0",
+			"updated": "2016-04-22 23:22:42",
+			"package": "http://example.com/updates/translations/french-language-pack.zip"
+		},
+		{
+			"language": "de_DE",
+			"version": "5.0",
+			"updated": "2016-04-22 23:22:42",
+			"package": "http://example.com/updates/translations/german-language-pack.zip"
+		}
+	],
+
 	"rating": 90,
 	"num_ratings": 123,
 
