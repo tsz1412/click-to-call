@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: Click to Call
+Plugin Name: click to Call
 
 Plugin URI: https://github.com/tsz1412/click-to-call.git
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
-Version: 1.5
+Version: 1.6
 
 Author: Tsviel Zaikman
 
-Author URI: http://tsz-dev.com
+Author URI: http://introweb.co.il
 
 License: License: GPLv2 or later
 
@@ -24,8 +24,15 @@ Domain Path /languages/
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+require 'updater/plugin-update-checker.php';
+	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'updater/click-to-call-updater.json',
+		__FILE__, //Full path to the main plugin file or functions.php.
+		'click-to-call'
+	);
 
 //* Updater init *//
+/*
 add_action( 'init', 'click_to_call_updater_init' );
 function click_to_call_updater_init() {
 	include_once 'updater.php';
@@ -50,7 +57,7 @@ function click_to_call_updater_init() {
 
 	}
 
-}
+}*/
 //* Updater init *//
 
 
@@ -75,6 +82,10 @@ include_once 'admin/admin.php';
 // Output Code If Enabled
 function click_to_call_code() {
     $options = get_option( 'click_to_call_settings' );
+	if(!isset($options['click_to_call_sticky_enable'])){
+		$options['click_to_call_sticky_enable'] = 0;
+	}
+	if($options['click_to_call_sticky_enable'] == '1'){
 		if(isset($options['click_to_call_bg'])){
 			echo '<div id="click_to_call_bar" class="ctc_bar" style="direction: ' .$clickToCallDirection = __('ltr', 'click-to-call'). '; background-color:' .$options['click_to_call_bg'] . '; '. $options['click_to_call_customcss'] .'">';
 		}
@@ -91,6 +102,10 @@ function click_to_call_code() {
 			}
 	
 		echo '</div>';
+	}
+	else{
+		
+	}
 		//Include style.css and fontawasome addon
 	    wp_enqueue_style('ctc-styles', plugin_dir_url( __FILE__ ) . 'css/ctc_style.css' );
 		wp_enqueue_style('ctc-styles-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );

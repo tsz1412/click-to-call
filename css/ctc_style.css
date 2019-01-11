@@ -29,6 +29,13 @@
     content: "\61"
 }
 
+.ctc-show-hide
+{
+    display:none;
+    margin: 0;
+    padding: 0;
+    clear:both;
+}
 
 @media (max-width:736px) {
     #click_to_call_bar,

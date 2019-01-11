@@ -3,8 +3,10 @@
 function load_custom_wp_admin_style() {
         wp_register_style( 'ctc_wp_admin_css', plugin_dir_url( __FILE__ ) . '../css/ctc_style_admin.css', false, '1.0.0' );
 		wp_register_style( 'ctc_wp_admin_css_fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
+		//wp_register_style( 'ctc_wp_admin_css_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
         wp_enqueue_style( 'ctc_wp_admin_css' );
 		wp_enqueue_style( 'ctc_wp_admin_css_fa' );
+		//wp_enqueue_style( 'ctc_wp_admin_css_jquery' );
 }
 
 function ctc_add_color_picker( $hook ) {
@@ -33,6 +35,16 @@ function click_to_call_settings_init() {
         'ctc_plugin_page'
     );
 
+//enable sticky slider
+    add_settings_field(
+        'click_to_call_sticky_enable',
+        __( 'Enable the Plugin', 'click-to-call' ),
+        'click_to_call_sticky_enable_render',
+        'ctc_plugin_page',
+        'click_to_call_ctc_plugin_page_section'
+    );
+
+	
 //call now enabler
     add_settings_field(
         'click_to_call_enable',
@@ -129,7 +141,16 @@ function click_to_call_settings_init() {
 }
 // Render Admin Input
 
-
+function click_to_call_sticky_enable_render() {
+    $options = get_option( 'click_to_call_settings' );
+	if(!isset($options['click_to_call_sticky_enable'])){
+		$options['click_to_call_sticky_enable'] = 0;
+	}
+    ?>
+    <input name="click_to_call_settings[click_to_call_sticky_enable]" id="ctc_sticky_enable" type="hidden" value="0" />
+    <input name="click_to_call_settings[click_to_call_sticky_enable]" id="ctc_sticky_enable"type="checkbox" value="1" <?php checked( '1', $options['click_to_call_sticky_enable'] ); ?> />
+    <?php
+}
 
 function click_to_call_enable_render() {
     $options = get_option( 'click_to_call_settings' );
@@ -162,9 +183,7 @@ function click_to_call_number_render() {
 }
 
 function click_to_call_icon_render(){
-	if (!isset($options['click_to_call_icon'])){
-		$options = get_option( 'click_to_call_settings' );
-	}
+	$options = get_option( 'click_to_call_settings' );
 	?>
 	<select name='click_to_call_settings[click_to_call_icon]' class='ctc_choose_icon'>
 		<option selected="selected" value='<?php echo $options['click_to_call_icon'] ?>'><?php echo $options['click_to_call_icon'] ?></option>
@@ -605,9 +624,7 @@ function click_to_call_icon_render(){
 }
 
 function click_to_contact_icon_render(){
-	if (!isset($options['click_to_contact_icon'])){
 		$options = get_option( 'click_to_call_settings' );
-	}
 	?>
  <select name='click_to_call_settings[click_to_contact_icon]' class='ctc_choose_icon'>
 	<option selected="selected" value='<?php echo $options['click_to_contact_icon'] ?>'><?php echo $options['click_to_contact_icon']?></option>
@@ -1089,13 +1106,20 @@ function click_to_call_settings_section_callback() {
 function click_to_call_options_page() {
     ?>
     <form action='options.php' method='post'>
-        <h1><?php _e('Click to Call', 'click-to-call') ?></h1>		
+		
+        <h1><?php _e('Click to Call', 'click-to-call') ?></h1>	
         <?php
         settings_fields( 'ctc_plugin_page' );
-        do_settings_sections( 'ctc_plugin_page' );
+        ?>
+		<div id="ctc_admin_content">
+		<?php
+		do_settings_sections( 'ctc_plugin_page' );
+		?>
+		</div>
+		<?php
         submit_button();
         ?>
-
+		
     </form>
     <?php
 }
