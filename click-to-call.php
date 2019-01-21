@@ -6,7 +6,7 @@ Plugin URI: https://github.com/tsz1412/click-to-call.git
 
 Description: Add a simple click to call bar to the bottom of your page on mobile devices.
 
-Version: 1.8
+Version: 2.0.0
 
 Author: Tsviel Zaikman
 
