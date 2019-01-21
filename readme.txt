@@ -6,7 +6,7 @@ Tested up to: 5.0.1
 Stable tag: 5.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-~Current Version:1.7~
+~Current Version:2.0.0~
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
 == Description ==
@@ -57,6 +57,10 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 2.0 =
+* Added extended contact area with toggle menu
+* Updater Final fix
+* Additional admin settings.
 
 = 1.0 =
 * A change since the previous version.
