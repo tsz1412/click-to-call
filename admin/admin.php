@@ -1,12 +1,31 @@
 <?php
 
+
+function ctc_dashboard_widgets() {
+global $wp_meta_boxes;
+
+wp_add_dashboard_widget('custom_help_widget', __('Click to Call Plugin - Created by Introweb', 'click-to-call'), 'custom_dashboard_help');
+}
+ 
+function custom_dashboard_help() {
+	echo __('<p>Welcome to my plugin! Need help? Contact me <a href="mailto:tsviel@introweb.co.il">here</a> or visit my website <a href="mailto:tsviel@introweb.co.il" target="_blank">here</a></p>
+	<p>If you enjoy the plugin and wish to see more updates please donate in the section bellow and help me expand this project</p>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: inline">
+	<input type="hidden" name="cmd" value="_s-xclick" />
+	<input type="hidden" name="hosted_button_id" value="UEW85MAMS23ZY" />
+	<input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+	<img alt="" border="0" src="https://www.paypal.com/en_IL/i/scr/pixel.gif" width="5" height="5" />
+	</form>', 'click-to-call');
+	echo '<img alt="" border="0" src="' . PLUGIN_DIR . 'updater/qrdonate.png" style="display: inline">';
+}
+
 function load_custom_wp_admin_style() {
-        wp_register_style( 'ctc_wp_admin_css', plugin_dir_url( __FILE__ ) . '../css/ctc_style_admin.css', false, '1.0.0' );
+        wp_register_style( 'ctc_wp_admin_css', plugin_dir_url( __FILE__ ) . '../css/ctc_style_admin.min.css', false, '1.0.0' );
 		wp_register_style( 'ctc_wp_admin_css_fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
-		//wp_register_style( 'ctc_wp_admin_css_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
+		wp_register_script( 'ctc_wp_admin_css_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
         wp_enqueue_style( 'ctc_wp_admin_css' );
 		wp_enqueue_style( 'ctc_wp_admin_css_fa' );
-		//wp_enqueue_style( 'ctc_wp_admin_css_jquery' );
+		wp_enqueue_style( 'ctc_wp_admin_css_jquery' );
 }
 
 function ctc_add_color_picker( $hook ) {
@@ -14,7 +33,7 @@ function ctc_add_color_picker( $hook ) {
         // Add Color Picker CSS
         wp_enqueue_style( 'wp-color-picker' );
         // Include Color Picker JS
-        wp_enqueue_script( 'custom-script-handle', plugins_url( '../js/ctc.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+        wp_enqueue_script( 'custom-script-handle', plugins_url( '../js/ctc.min.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
     }
 }
 
@@ -82,6 +101,10 @@ function click_to_call_settings_init() {
         'click_to_call_ctc_plugin_page_section'
     );
 
+	
+	//call function fields
+
+	
      add_settings_field(
         'click_to_contact_link',
         __( 'Your Click to Contact link', 'click-to-call' ),
@@ -97,7 +120,13 @@ function click_to_call_settings_init() {
         'ctc_plugin_page',
         'click_to_call_ctc_plugin_page_section'
     );
-
+    add_settings_field(
+        'click_to_contact_shortcode',
+        __( 'Contact form shortcode', 'click-to-call' ),
+        'click_to_contact_shortcode_render',
+        'ctc_plugin_page',
+        'click_to_call_ctc_plugin_page_section'
+    );
     add_settings_field(
         'click_to_call_color',
         __( 'Click to Call Text Color', 'click-to-call' ),
@@ -130,13 +159,6 @@ function click_to_call_settings_init() {
         'click_to_call_ctc_plugin_page_section'
     );
 
-    add_settings_field(
-        'click_to_call_customcss',
-        __( 'Click to Call custom css', 'click-to-call' ),
-        'click_to_call_customcss_render',
-        'ctc_plugin_page',
-        'click_to_call_ctc_plugin_page_section'
-    );
 
 }
 // Render Admin Input
@@ -172,7 +194,17 @@ function click_to_call_message_render() {
     $options = get_option( 'click_to_call_settings' );
     ?>
     <input type='text' placeholder="ex. Call Now!" name='click_to_call_settings[click_to_call_message]' value='<?php echo $options['click_to_call_message']; ?>'>
+    
+<?php
+	echo "<br>" . __('Set Call now button custom Text', 'click-to-call');
+}
+
+function click_to_contact_shortcode_render() {
+    $options = get_option( 'click_to_call_settings' );
+    ?>
+    <input type='text' placeholder="Your Contact form shortcode!" name='click_to_call_settings[click_to_contact_shortcode]' value='<?php echo $options['click_to_contact_shortcode']; ?>'>
     <?php
+	echo "<br>" .  __('Enter the shortcode of your contact form. Use Contact form 7 and style Contact form 7 plugins for the best optimization', 'click-to-call');
 }
 
 function click_to_call_number_render() {
@@ -180,6 +212,7 @@ function click_to_call_number_render() {
     ?>
     <input type='text' placeholder="ex. 5555555555" name='click_to_call_settings[click_to_call_number]' value='<?php echo $options['click_to_call_number']; ?>'>
     <?php
+	echo "<br>" .  __('Enter the phone number you want the button to call to. Exmaple: +972123456789', 'click-to-call');
 }
 
 function click_to_call_icon_render(){
@@ -621,6 +654,7 @@ function click_to_call_icon_render(){
 		<option value="fa-tags">&#xf02c; fa-tags</option>
 	 </select> <i class='ctc-fa fa <?php echo $options['click_to_call_icon'] ?>'></i>
     <?php
+		echo "<br>" .  __('The Icon to show on the Call Button', 'click-to-call');
 }
 
 function click_to_contact_icon_render(){
@@ -1061,7 +1095,9 @@ function click_to_contact_icon_render(){
     <option value="fa-tag">&#xf02b; fa-tag</option>
     <option value="fa-tags">&#xf02c; fa-tags</option>
   </select> <i class='ctc-fa fa <?php echo $options['click_to_contact_icon'] ?>'></i>
+
     <?php
+		echo "<br>" .  __('The Icon to show on the Contact Button', 'click-to-call');
 }
 
 function click_to_call_color_render() {
@@ -1069,6 +1105,7 @@ function click_to_call_color_render() {
     ?>
     <input type='text' class="color-field"  name='click_to_call_settings[click_to_call_color]' value='<?php echo $options['click_to_call_color']; ?>'>
     <?php
+	echo "<br>" .  __('Choose the sticky bar Font Color', 'click-to-call');
 }
 
 function click_to_call_bg_render() {
@@ -1076,13 +1113,7 @@ function click_to_call_bg_render() {
     ?>
     <input type='text' class="color-field" name='click_to_call_settings[click_to_call_bg]' value='<?php echo $options['click_to_call_bg']; ?>'>
     <?php
-}
-
-function click_to_call_customcss_render() {
-    $options = get_option( 'click_to_call_settings' );
-    ?>
-	<textarea name='click_to_call_settings[click_to_call_customcss]'><?php echo $options['click_to_call_customcss']; ?></textarea>
-    <?php
+	echo "<br>" .  __('Choose the sticky bar Background Color', 'click-to-call');
 }
 
 function click_to_contact_message_render() {
@@ -1090,17 +1121,18 @@ function click_to_contact_message_render() {
     ?>
     <input type='text' placeholder="We will call you back" name='click_to_call_settings[click_to_contact_message]' value='<?php echo $options['click_to_contact_message']; ?>'>
     <?php
+	echo "<br>" . __('Set contact now button custom text', 'click-to-call');
 }
 
 function click_to_contact_link_render() {
     $options = get_option( 'click_to_call_settings' );
     ?>
-    <input type='text' placeholder="'<?php __('leave # for Effect') ?>" name='click_to_call_settings[click_to_contact_link]' value='<?php echo $options['click_to_contact_link']; ?>'>
-    <?php
+    <input type='text' placeholder="'<?php echo __('Leave #ContactUsNow for Effect') ?>" name='click_to_call_settings[click_to_contact_link]' value='<?php echo $options['click_to_contact_link']; ?>'><?php  echo "<br>" . __('type #ContactUsNow for toggle effect with contact form shortcode or set the href to redirect to another page', 'click-to-call'); ?>
+<?php
 }
 
 function click_to_call_settings_section_callback() {
-    echo __( 'Enter your information in the fields below. If you don\'t enter anything into the message area a phone icon will still show. Google Analytics event tracking is added and will show under the events section as \'Phone\'. The plugin will only show on devices with a screen width under 736px. ', 'click_to_call' );
+    //echo __( 'Settings for the Plugin ', 'click_to_call' );
 }
 
 function click_to_call_options_page() {

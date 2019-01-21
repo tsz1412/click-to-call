@@ -1,19 +1,19 @@
 {
 	"name": "Click to Call",
-	"version": "1.7",
+	"version": "2.0.0",
 	"download_url": "https://github.com/tsz1412/click-to-call.git",
 
 	"homepage": "https://introweb.co.il/",
 	"requires": "5.0",
 	"tested": "5.0",
-	"last_updated": "2019-01-11 16:17:00",
+	"last_updated": "2019-01-21 16:17:00",
 	"upgrade_notice": "Here's why you should upgrade...",
 
 	"author": "Tsviel Zaikman",
 	"author_homepage": "https://introweb.co.il/",
 
 	"sections": {
-		"description": "(Required) Plugin description. Basic HTML can be used in all sections.",
+		"description": "(Required) Adds a Click to Call and Click to contact Sticky bar at the footer of the Page",
 		"installation": "(Recommended) Installation instructions.",
 		"changelog": "(Recommended) Changelog. <p>This section will be displayed by default when the user clicks 'View version x.y.z details'.</p>",
 		"custom_section": "This is a custom section labeled 'Custom Section'."

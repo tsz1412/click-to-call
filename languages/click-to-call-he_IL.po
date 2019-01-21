@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Click to Call\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-14 23:48+0300\n"
-"PO-Revision-Date: 2018-05-15 00:47+0300\n"
+"POT-Creation-Date: 2019-01-21 22:31+0200\n"
+"PO-Revision-Date: 2019-01-21 22:37+0200\n"
 "Last-Translator: צביאל זאיקמן <tsz1412@gmail.com>\n"
 "Language-Team: עִבְרִית\n"
 "Language: he_IL\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: click-to-call.php\n"
@@ -22,68 +22,204 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: click-to-call.php:63
+#: admin/admin.php:7
+msgid "Click to Call Plugin - Created by Introweb"
+msgstr "תוסף חיוג ויצירת קשר דביק - נוצר על ידי אינטרווב"
+
+#: admin/admin.php:11
 msgid ""
-"A simple plugin that adds click to call functionality to your WordPress site "
-"on mobile devices."
-msgstr "כפתור חייג וכפתור צור קשר בסליידר מקובע בתחתית העמוד בתצוגת מובייל"
-
-#: click-to-call.php:70
-msgid "Enable Click to Call"
-msgstr "אפשר לחיצה לחיוג"
-
-#: click-to-call.php:78
-msgid "Enable Click to Contact"
-msgstr "אפשר לחיצה ליצירת קשר"
-
-#: click-to-call.php:87
-msgid "Your Click to Call Message"
-msgstr "שם כפתור החיוג"
-
-#: click-to-call.php:96
-msgid "Your Click to Contact Message"
-msgstr "שם כפתור הצור קשר"
-
-#: click-to-call.php:104
-msgid "Your Click to Contact link"
-msgstr "הכתובת אליה לחיצה על צור קשר מובילה"
-
-#: click-to-call.php:112
-msgid "Your Click to Call Number"
-msgstr "מספר העסק אליו כפתור החיוג מתקשר"
-
-#: click-to-call.php:120
-msgid "Click to Call Text Color"
-msgstr "צבע הפונט של כפתור חיוג"
-
-#: click-to-call.php:128
-msgid "Click to Call Background Color"
-msgstr "צבע הרקע של הסליידר"
-
-#: click-to-call.php:135
-msgid "Click to Call custom css"
-msgstr "תוספות CSS (זמני)"
-
-#: click-to-call.php:233
-msgid ""
-"Enter your information in the fields below. If you don't enter anything into "
-"the message area a phone icon will still show. Google Analytics event "
-"tracking is added and will show under the events section as 'Phone'. The "
-"plugin will only show on devices with a screen width under 736px. "
+"<p>Welcome to my plugin! Need help? Contact me <a href=\"mailto:"
+"tsviel@introweb.co.il\">here</a> or visit my website <a href=\"mailto:"
+"tsviel@introweb.co.il\" target=\"_blank\">here</a></p>\n"
+"\t<p>If you enjoy the plugin and wish to see more updates please donate in "
+"the section bellow and help me expand this project</p>\n"
+"\t<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" "
+"target=\"_top\" style=\"display: inline\">\n"
+"\t<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\" />\n"
+"\t<input type=\"hidden\" name=\"hosted_button_id\" value=\"UEW85MAMS23ZY\" /"
+">\n"
+"\t<input type=\"image\" src=\"https://www.paypalobjects.com/en_US/IL/i/btn/"
+"btn_donateCC_LG.gif\" border=\"0\" name=\"submit\" title=\"PayPal - The "
+"safer, easier way to pay online!\" alt=\"Donate with PayPal button\" />\n"
+"\t<img alt=\"\" border=\"0\" src=\"https://www.paypal.com/en_IL/i/scr/pixel."
+"gif\" width=\"5\" height=\"5\" />\n"
+"\t</form>"
 msgstr ""
+"<p>אני מברך אותכם על התקנת התוסף שלי. צריכים עזרה? צרו איתי קשר<a href="
+"\"mailto:tsviel@introweb.co.il\">כאן</a>או בקרו באתר האינטרנט שלי <a href="
+"\"mailto:tsviel@introweb.co.il\" target=\"_blank\">כאן</a></p>\n"
+"\t<p>אם אתם מרוצים מהפלאגין ורוצים לראות שיפורים נוספים, אני מזמין אתכם "
+"לתרום. כל סכום שייתרם ילך לטובת פיתוח עדכונים שימושיים!</p>\n"
+"<form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" "
+"target=\"_top\">\n"
+"<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\" />\n"
+"<input type=\"hidden\" name=\"hosted_button_id\" value=\"LJ5QB2MBC9JJW\" />\n"
+"<input type=\"image\" src=\"https://www.paypalobjects.com/he_IL/IL/i/btn/"
+"btn_donateCC_LG.gif\" border=\"0\" name=\"submit\" title=\"PayPal - The "
+"safer, easier way to pay online!\" alt=\"Donate with PayPal button\" />\n"
+"<img alt=\"\" border=\"0\" src=\"https://www.paypal.com/he_IL/i/scr/pixel.gif"
+"\" width=\"1\" height=\"1\" />\n"
+"</form>"
 
-#: click-to-call.php:246
-msgid "ltr"
-msgstr "rtl"
-
-#. Plugin Name of the plugin/theme
+#: admin/admin.php:43 admin/admin.php:1142
 msgid "Click to Call"
 msgstr "סליידר יצירת קשר וחיוג"
 
+#: admin/admin.php:49
+msgid ""
+"A simple plugin that adds click to call functionality to your WordPress site "
+"on mobile devices."
+msgstr "כפתור חייג וכפתור צור קשר בסליידר מקובע בתחתית העמוד בתצוגת מובייל."
+
+#: admin/admin.php:60
+msgid "Enable the Plugin"
+msgstr "הפעל את התוסף"
+
+#: admin/admin.php:70
+msgid "Enable Click to Call"
+msgstr "הצג את כפתור החיוג"
+
+#: admin/admin.php:79
+msgid "Enable Click to Contact"
+msgstr "הצג את כפתור הצור קשר"
+
+#: admin/admin.php:88
+msgid "Your Click to Call Message"
+msgstr "שם כפתור החיוג"
+
+#: admin/admin.php:98
+msgid "Your Click to Contact Message"
+msgstr "שם כפתור הצור קשר"
+
+#: admin/admin.php:110
+msgid "Your Click to Contact link"
+msgstr "הכתובת אליה לחיצה על צור קשר מובילה"
+
+#: admin/admin.php:118
+msgid "Your Click to Call Number"
+msgstr "מספר העסק אליו כפתור החיוג מתקשר"
+
+#: admin/admin.php:125
+msgid "Contact form shortcode"
+msgstr "קיצור הדרך אל טופס הצור קשר"
+
+#: admin/admin.php:132
+msgid "Click to Call Text Color"
+msgstr "צבע הפונט של כפתור חיוג"
+
+#: admin/admin.php:140
+msgid "Click to Call Icon"
+msgstr "סליידר יצירת קשר וחיוג"
+
+#: admin/admin.php:148
+msgid "Click to Contact Icon"
+msgstr "הכתובת אליה לחיצה על צור קשר מובילה"
+
+#: admin/admin.php:156
+msgid "Click to Call Background Color"
+msgstr "צבע הרקע של הסליידר"
+
+#: admin/admin.php:199
+msgid "Set Call now button custom Text"
+msgstr "ערוך את טקסט כפתור החיוג"
+
+#: admin/admin.php:207
+msgid ""
+"Enter the shortcode of your contact form. Use Contact form 7 and style "
+"Contact form 7 plugins for the best optimization"
+msgstr ""
+"הזן כאן את קיצור הדרך אל טופס צור הקשר החיצוני. אנו ממליצים להשתמש בפלאגינים "
+"CONTACT FORM 7 וב-STYLE CONTACT FORM 7 לבנייה ועיצוב טופס יצירת הקשר "
+"לביצועים האופטימליים ביותר"
+
+#: admin/admin.php:215
+msgid ""
+"Enter the phone number you want the button to call to. Exmaple: +972123456789"
+msgstr "הזן את מספר הטלפון אליו הכפתור יחייג בעת לחיצה. דוגמה: +972545123456"
+
+#: admin/admin.php:657
+msgid "The Icon to show on the Call Button"
+msgstr "בחר אייקון לכפתור החיוג"
+
+#: admin/admin.php:1100
+msgid "The Icon to show on the Contact Button"
+msgstr "בחר אייקון לכפתור יצירת הקשר"
+
+#: admin/admin.php:1108
+msgid "Choose the sticky bar Font Color"
+msgstr "בחר צבע לפונט הכפתורים"
+
+#: admin/admin.php:1116
+msgid "Choose the sticky bar Background Color"
+msgstr "צבע הרקע של הסליידר"
+
+#: admin/admin.php:1124
+msgid "Set contact now button custom text"
+msgstr "בחר צבע רקע לכפתורים"
+
+#: admin/admin.php:1130
+msgid "Leave #ContactUsNow for Effect"
+msgstr "השאר את הכיתוב #ContactUsNow לאפקט תפריט נסגרת"
+
+#: admin/admin.php:1130
+msgid ""
+"type #ContactUsNow for toggle effect with contact form shortcode or set the "
+"href to redirect to another page"
+msgstr ""
+"על מנת להפעיל את תפריט יצירת הקשר המקוצר עם אפקט סגירה הכנס את הכיתוב  "
+"#ContactUsNow. בנוסף ניתן להכניס קישור לדף אחר"
+
+#: click-to-call.php:86 click-to-call.php:94 click-to-call.php:97
+msgid "ltr"
+msgstr "rtl"
+
+#: updater/Puc/v4p5/Plugin/Ui.php:54
+msgid "View details"
+msgstr "צפה בפרטים נוספים"
+
+#: updater/Puc/v4p5/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr "מידע נוסף על %s"
+
+#: updater/Puc/v4p5/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr "לחץ כאן לבדוק האם קיים עדכון"
+
+#: updater/Puc/v4p5/Plugin/Ui.php:213
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "תוסף %s מעודכן."
+
+#: updater/Puc/v4p5/Plugin/Ui.php:215
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "קיימת גירסה חדשה לתוסף %s."
+
+#: updater/Puc/v4p5/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "לא יכל לקבוע האם קיים עדכון עבור %s."
+
+#: updater/Puc/v4p5/Plugin/Ui.php:223
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "סטטוס עדכון לא ידוע עבור עדכון ל%s, פנה לתמיכה הטכנית של יוצר התוסף"
+
+#: updater/Puc/v4p5/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "לוג שינווים לא קיים."
+
+#. Plugin Name of the plugin/theme
+msgid "click to Call"
+msgstr "סליידר יצירת קשר וחיוג"
+
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "http://tsz-dev.com"
-msgstr "http://tsz-dev.com"
+msgid "https://github.com/tsz1412/click-to-call.git"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
@@ -93,3 +229,27 @@ msgstr "כפתור חייג וכפתור צור קשר בסליידר מקובע
 #. Author of the plugin/theme
 msgid "Tsviel Zaikman"
 msgstr "צביאל זאיקמן"
+
+#. Author URI of the plugin/theme
+msgid "http://introweb.co.il"
+msgstr "https://introweb.co.il"
+
+#~ msgid "Enable Click to Call Plugin"
+#~ msgstr "אפשר לחיצה לחיוג"
+
+#~ msgid "Enable Call now Button"
+#~ msgstr "אפשר לחיצה ליצירת קשר"
+
+#~ msgid "Enable Contact now Button"
+#~ msgstr "הצג את כפתור הצור קשר"
+
+#~ msgid ""
+#~ "Enter your information in the fields below. If you don't enter anything "
+#~ "into the message area a phone icon will still show. Google Analytics "
+#~ "event tracking is added and will show under the events section as "
+#~ "'Phone'. The plugin will only show on devices with a screen width under "
+#~ "736px. "
+#~ msgstr "הגדר את הפלאגין."
+
+#~ msgid "Click to Call custom css"
+#~ msgstr "תוספות CSS (זמני)"
