@@ -1,11 +1,11 @@
 {
 	"name": "Click to Call",
-	"version": "1.8",
+	"version": "2.0.0",
 	"download_url": "https://github.com/tsz1412/click-to-call.git",
 
 	"homepage": "https://introweb.co.il/",
-	"requires": "5.0",
-	"tested": "5.0",
+	"requires": "3.0.0",
+	"tested": "5.0.3",
 	"last_updated": "2019-01-21 16:17:00",
 	"upgrade_notice": "Here's why you should upgrade...",
 
