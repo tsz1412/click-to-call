@@ -7,7 +7,7 @@
 	"requires": "3.0.0",
 	"tested": "5.0.3",
 	"last_updated": "2019-01-21 16:17:00",
-	"upgrade_notice": "Here's why you should upgrade...",
+	"upgrade_notice": "Jquery include row was removed to prevent collusion with other plugins
 
 	"author": "Tsviel Zaikman",
 	"author_homepage": "https://introweb.co.il/",
