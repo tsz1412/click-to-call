@@ -56,8 +56,7 @@ function ctc_load_plugin_style()
 	    wp_enqueue_style('ctc-styles', PLUGIN_DIR . 'css/ctc_style.min.css' );
 		wp_enqueue_style('ctc-styles-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
 		wp_enqueue_style('ctc-styles-bootstrap', 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
-		
-		wp_enqueue_script('ctc-script-jquery' , 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
+		//wp_enqueue_script('ctc-script-jquery' , 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 		wp_enqueue_script('ctc-script-bootstrap' , 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js');
 		
 	// Add Admin Stuff
