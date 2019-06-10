@@ -5,12 +5,12 @@
 
 	"homepage": "https://introweb.co.il/",
 	"requires": "3.0.0",
-	"tested": "5.0.3",
-	"last_updated": "2019-01-21 16:17:00",
+	"tested": "5.2.1",
+	"last_updated": "2019-06-10 22:10:00",
 	"upgrade_notice": "Jquery include row was removed to prevent collusion with other plugins
 
 	"author": "Tsviel Zaikman",
-	"author_homepage": "https://introweb.co.il/",
+	"author_homepage": "https://tsz.co.il/",
 
 	"sections": {
 		"description": "(Required) Adds a Click to Call and Click to contact Sticky bar at the footer of the Page",
