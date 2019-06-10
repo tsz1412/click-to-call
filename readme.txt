@@ -6,7 +6,7 @@ Tested up to: 5.0.1
 Stable tag: 5.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-~Current Version:2.0.2~
+~Current Version:2.1~
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
 == Description ==
