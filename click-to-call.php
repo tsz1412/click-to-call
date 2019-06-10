@@ -56,7 +56,6 @@ function ctc_load_plugin_style()
 	    wp_enqueue_style('ctc-styles', PLUGIN_DIR . 'css/ctc_style.min.css' );
 		wp_enqueue_style('ctc-styles-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
 		wp_enqueue_style('ctc-styles-bootstrap', 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
-		//wp_enqueue_script('ctc-script-jquery' , 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 		wp_enqueue_script('ctc-script-bootstrap' , 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js');
 		
 	// Add Admin Stuff
@@ -103,7 +102,7 @@ function click_to_call_code() {
 			}
 
 			if ($options['click_to_contact_enable'] == '1') {
-				echo "<a data-toggle='collapse' data-target='".$options['click_to_contact_link']."'  id='ctc_contact_toggle' style='color:" . $options['click_to_call_color'] . "'><i class='ctc-fa fa " . $options['click_to_contact_icon'] . "'></i> " . $options['click_to_contact_message'] . "</a>";
+				echo "<a data-toggle='collapse' href='#' data-target='".$options['click_to_contact_link']."'  id='ctc_contact_toggle' style='color:" . $options['click_to_call_color'] . "'><i class='ctc-fa fa " . $options['click_to_contact_icon'] . "'></i> " . $options['click_to_contact_message'] . "</a>";
 			}
 	
 		echo '</div>';
